@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  jet-mobile-api-db:
+    container_name: jet-mobile-api-mysql-db
+    image: jamielsharief/mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: "jet_mobile_api_db"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - vol-jet-mobile-api-db:/var/lib/mysql
+volumes:
+  vol-jet-mobile-api-db:
